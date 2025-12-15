@@ -1,25 +1,23 @@
+// app/tecnologias/page.tsx
+
 import tecnologias from '@/app/data/tecnologias.json'
-import Image from 'next/image'
+import TecnologiaCard from '@/components/TecnologiaCard'  // ou o caminho certo
 
 export default function TecnologiasPage() {
   return (
     <>
-      <h2>Tecnologias Exploradas</h2>
-      
-      {tecnologias.map((tech, index) => (
-        <div key={index}>
-          <Image
-            src={`/tecnologias/${tech.image}`}
-            alt={tech.title}
-            width={200}
-            height={200}
+      <h2 className="text-3xl font-bold text-center my-10">Tecnologias Exploradas</h2>
+
+      <div className="flex flex-wrap justify-center gap-8 p-10">
+        {tecnologias.map((tech, index) => (
+          <TecnologiaCard
+            key={index}
+            title={tech.title}
+            image={tech.image}
+            index={index} 
           />
-          
-          <h3>{tech.title}</h3>
-          <p>{tech.description}</p>
-          <p>Rating: {tech.rating}/5</p>
-        </div>
-      ))}
+        ))}
+      </div>
     </>
   )
 }
