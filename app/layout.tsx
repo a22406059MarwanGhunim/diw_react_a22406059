@@ -62,7 +62,7 @@ export default function RootLayout({
                 Loja
               </Link>
               <Link href="/produtos" className="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                Produtos
+                DEISI SHOP
               </Link>
             </nav>
           </div>
